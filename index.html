@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stockyards Trading Post</title>
+
+<style type="text/css">
+html
+{
+	
+	background-image:url(images/background.jpg);
+	}
+body
+{
+	margin:0px;
+	}
+header
+{
+	margin:0px;
+	padding:15px;
+	border-bottom:10px #630;
+	background-image:url(images/background.jpg);
+	}
+#contents
+{padding:15px 20px 20px 20px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#logo
+{
+	float:left;}
+#bullhead
+{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	visibility:visible;
+}
+nav ul
+{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;}
+nav ul li
+{
+	display:inline-block;}
+
+.next_button[style]
+{
+	opacity:1;
+}
+	
+nav ul li img:hover
+	{
+	-moz-box-shadow: 3px 3px 3px #2B190F;
+  -moz-border-radius: 11px 11px 13px 11px;
+  -webkit-box-shadow: 3px 3px 3px #2B190F;
+  -webkit-border-radius: 11px 11px 13px 11px;
+	}
+	
+#text_desc
+{
+	background-color:rgba(250,250,235,0.8);
+	color:#2B190F;
+	padding:10px;
+	-webkit-border-radius: 11px 11px 13px 11px;
+ 	-moz-border-radius: 11px 11px 13px 11px;
+	 border-radius: 11px 11px 13px 11px;
+
+	}
+#image_container
+{
+	border:49px solid transparent;
+	border-image:url(images/photoborder.png)47 47 47 47 round;
+	-moz-border-image:url(images/photoborder.png)47 47 round;
+	-webkit-border-image:url(images/photoborder.png)47 47 47 47 round;
+	-o-border-image:url(images/photoborder.png)47 47 47 47 round;
+	width:800px;
+	margin:auto;
+	}
+
+footer ul
+{
+	text-align:center;	}
+footer li
+{
+	margin:10px;
+	display:inline-block;	}
+a
+{
+	text-decoration:none;
+	color:#2B190F;
+}
+
+#navigationbar
+{
+width:900px;
+margin:0px;
+position:relative;
+margin-top:10px;
+}
+
+#image_container img
+{
+	width:800px;
+	height:300px;
+	background:#FFC;
+	
+	}
+	
+#cart
+{
+margin-left:351px;
+	}
+</style>
+<!-- CSS -->
+<link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />
+
+<!-- JS -->
+<script type="text/javascript" src="js/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.animate-colors-min.js"></script>
+<script type="text/javascript" src="js/jquery.skitter.min.js"></script>
+
+<!-- Init Plugin -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".box_skitter_large").skitter({
+			numbers_align: "center", 
+ 			dots:false, 
+ 			preview: false, 
+ 			focus: false, 
+ 			focus_position: "leftTop", 
+ 			controls: false, 
+ 			controls_position: "leftTop", 
+ 			progressbar: false, 
+ 			animateNumberOver: { 'backgroundColor':'#2B190F' }, 
+ 			enable_navigation_keys: true
+		});
+	});
+	
+	function windowcompsize()
+	{
+		if($(window).width()<480)	
+		{
+			$('#navbarimage').css("display","none");
+			$('#navbarselect').css("display","block");
+			$('#navigationbar').css('left','0px');
+			$('#navigationbar').css('padding-left','20px');
+			}
+		else
+		{
+			$('#navbarimage').css("display","block");
+			$('#navbarselect').css("display","none");
+			}
+		if($(window).width()<850)
+		{
+			$('#image_container').css("display","none");
+			$('#navigationbar').css('left','0');
+			$('#navigationbar').css('padding','0px 20px 0px 20px');
+			$('#cart').css('margin-left','0px');
+			}
+		else
+		{
+			$('#image_container').css("display","block");
+			$('#navigationbar').css('padding','0px');
+			$('#cart').css('margin-left','351px');
+			navmargin();
+			}
+	}
+	
+	
+	$(document).ready(function(e) {
+        windowcompsize();
+		navmargin();
+    });
+	$(window).resize(function(e) {
+        windowcompsize();
+    });
+	function navmargin()
+	{
+		var leftmarg=$('#image_container').offset().left;
+		$('#navigationbar').css('left',leftmarg);
+		}
+	function navselect(uri)
+	{
+		window.location=uri;
+		}
+</script>
+
+	  <link type="text/css" rel="stylesheet" href="css/imports.css" />
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script type="text/javascript" src="js/libs/modernizr-2.0.6.min.js"></script>
+
+</head>
+<body>
+<header>
+<!--<img alt="Trading Post" id="logo" src="./images/TPwoodleather.png">-->
+<img alt="Bull logo" id="bullhead" src="./images/textwbull.png" />
+</header>
+
+
+<nav id="navigationbar">
+	<ul id="navbarimage">
+		<li><a href="index.html"><img class="navbutton" alt="Home" src="./images/nav/home.png" /></a></li>
+		<li><a href="shop.php"><img class="navbutton" alt="Shop" src="./images/nav/shop.png" /></a></li>
+		<li><a href="events.html"><img class="navbutton" alt="Events" src="./images/nav/events.png" /></a></li>
+		<li><a href="stores.html"><img class="navbutton" alt="Stores" src="./images/nav/stores.png" /></a></li>
+		<li><a href="Contact.php"><img class="navbutton" alt="Contact" src="./images/nav/contact.png" /></a></li>
+        <li><a href="cart.php"><img id="cart" class="navbutton" alt="Shopping Cart" src="./images/nav/shoppingcart.png" /></a></li>
+	</ul>
+    <select id="navbarselect" style="display:none" onchange="javascript:navselect(this.value);">
+  		 <option selected="selected" value="index.html">Home</option>
+		<option value="shop.php">Shop</option>
+		<option value="events.html">Events</option>
+		<option value="stores.html">Stores</option>
+		<option value="Contact.php">Contact</option>
+        <option value="cart.php">Shopping Cart</option>
+  </select>
+</nav>
+
+<div id="image_container">
+		<div class="border_box">
+			<div class="box_skitter box_skitter_large">
+				<ul>
+					<li><a href="#glassBlock"><img src="./images/trial.jpg" class="glassBlock" alt=""/></a></li>
+					<li><a href="#glassBlock"><img src="./images/stpstore1.jpg" class="glassBlock" alt="" /></a><!--<div class="label_text"><p></p></div>--></li>
+					<li><a href="#glassBlock"><img src="./images/stpstore2.jpg" class="glassBlock" alt="" /></a></li>
+					<li><a href="#glassBlock"><img src="./images/TPwoodleather.jpg" class="glassBlock" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+        
+</div>
+<div class="row">
+<section id="contents" >
+<article id="text_desc">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id mi bibendum magna ullamcorper interdum. Morbi facilisis, tortor in dictum porta, libero nulla congue mi, vitae posuere nisl nisl at mi. Sed bibendum, tellus non scelerisque bibendum, dolor est egestas quam, ut suscipit odio dolor vel erat. Vivamus magna orci, luctus non suscipit sed, dapibus nec sapien. Cras massa ipsum, pulvinar vel interdum sed, imperdiet sed nulla. Etiam ut metus urna. Sed gravida neque nec mi fermentum pretium.
+</p><p>
+Integer vitae lacus et mauris tempus sodales at non mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris mattis varius auctor. Sed mollis lectus vel mauris egestas pellentesque. Cras imperdiet sem eu mauris tincidunt feugiat. Mauris at mauris felis, vitae gravida elit. Donec vel neque tempus sem tempor sollicitudin quis in massa. Etiam a eros diam, eu lacinia nisl. Donec lacus felis, mollis in lacinia sed, luctus et augue. Cras ac ligula non erat venenatis consectetur ac eget eros. Fusce nec pellentesque nulla. Etiam quis orci est, id varius mi.
+</p><p>
+Integer sollicitudin egestas metus sed suscipit. Mauris a libero auctor felis posuere gravida. Praesent nisl nisi, ultricies id vulputate vel, luctus a orci. Morbi turpis felis, elementum id posuere vel, suscipit at mauris. Aliquam erat volutpat. Vestibulum posuere molestie vehicula. Aliquam dignissim, mauris quis lobortis lacinia, nisi risus mattis libero, eget luctus neque enim ut purus.
+</p>
+</article>
+</section>
+</div>
+
+<footer>
+<ul>
+<li><a href="">Sitemap</a>
+</li>
+<li>
+<a href="index.html">About</a></li>
+<li>
+<a href="contact.php">Contact Us</a></li>
+</ul>
+</footer>
+</body>
+</html>
