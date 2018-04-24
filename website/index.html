@@ -63,13 +63,13 @@ display: inline-block;
 }
 
 </style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "sample_cluster_data.csv",
+        url: "files/sample_cluster_data.csv",
         dataType: "text",
         success: function(data) {processData(data);}
      });
