@@ -4,7 +4,7 @@
 
 .listing{
   min-width: 900px;
-  color: #676362;
+  color: white;
 }
 
 .summaryinfo{
@@ -21,7 +21,7 @@
   display:inline;
   float: left;
   overflow-y: auto;
-  color: #676362;
+  color: white;
   font-size: 12px;
 }
 
@@ -34,10 +34,6 @@
   padding: 10px;
 }
 
-.infoline{
-  padding: 0;
-  margin: 0;
-}
 
 .listing_reviews{
   width: 100%;
@@ -61,7 +57,6 @@
   margin: auto;
   padding: 10px;
   margin:auto;
-  color: #676362;
 }
 
 #listings_container {
@@ -84,7 +79,7 @@ display: inline-block;
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "listings_topics.txt",
+        url: "reviews_topics.txt",
         dataType: "text",
         success: function(data) {processData(data);}
      });
@@ -99,13 +94,13 @@ function processData(data) {
         else{
             var rowCells = allRows[singleRow].split('|');
             var listing = '<div id='+rowCells[0]+' class="listing">';
-            listing+='<div id="title">'+rowCells[6]+'</div>';
-            listing+='<img class="listing_image" src='+rowCells[9]+'/>';
+            listing+='<div id="title"> Large Bedroom in WestRoxbury/Rozzie </div>';
+            listing+='<img class="listing_image" src='+rowCells[7]+'/>';
             listing+='<div class="summaryinfo">';
-            listing+='<div class="infoline"> <p>'+rowCells[7] +'</p></div>';
-            listing+='<div class="infoline"> <p>'+ rowCells[8] +'</p></div>';
+            listing+='<div> Private room </div>';
+            listing+='<div> Kenmore </div>';
             listing+='<div id="'+rowCells[0]+'" class="sum_review">'+'<p>'+rowCells[1]+'</p></div>';
-            listing+='<form action="'+rowCells[10]+'"><input type="submit" value="Check Out the Listing" /></form>';
+            listing+='<form action="'+rowCells[6]+'"><input type="submit" value="Go to Google" /></form>';
             listing+= '</div>';
             listing+='<div class="listing_reviews">';
             listing+='<div id="'+rowCells[0]+'" class="listing_review">'+'<p>'+rowCells[2]+'</p></div>';
@@ -179,7 +174,7 @@ http://www.templatemo.com/tm-504-page-one
 
 
             <!-- Gallery -->
-            <section class="parallax-window tm-section tm-section-gallery tm-flex" id="gallery" data-parallax="scroll">
+            <section class="parallax-window tm-section tm-section-gallery tm-flex" id="gallery" data-parallax="scroll" data-image-src="img/bg-03.jpg">
                 <div class="tm-page-content-width tm-flex-col tm-gallery-content">
                     <div class="tm-content-box-inner">
                         <h2 class="tm-section-title">Listings</h2>
