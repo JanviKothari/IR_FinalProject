@@ -3,7 +3,7 @@
 <style>
 
 .listing{
-  min-width: 900px;
+  min-width: 1000px;
   color: #676362;
 }
 
@@ -14,12 +14,14 @@
     width: 38%;
     font-size: 20px;
     padding-top: 10px;
+    margin:0px;
 }
 
 .sum_review{
   max-height: 300px;
   display:inline;
   float: left;
+  padding: 10px;
   overflow-y: auto;
   color: #676362;
   font-size: 12px;
@@ -31,12 +33,14 @@
   overflow: hidden;
   width: 60%;
   height: auto;
+  max-height: 450px;
   padding: 10px;
 }
 
 .infoline{
-  padding: 0;
+  padding: 10px;
   margin: 0;
+  font-weight: bold;
 }
 
 .listing_reviews{
@@ -64,6 +68,16 @@
   color: #676362;
 }
 
+input {
+	color: white;
+	background-color:#676362;
+  border-radius: 25px;
+}
+
+input:hover{
+  background-color: #96C700;
+}
+
 #listings_container {
 display: inline-block;
 }
@@ -84,7 +98,7 @@ display: inline-block;
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "listings_topics.txt",
+        url: "listings_topics_edit.txt",
         dataType: "text",
         success: function(data) {processData(data);}
      });
@@ -102,8 +116,8 @@ function processData(data) {
             listing+='<div id="title">'+rowCells[6]+'</div>';
             listing+='<img class="listing_image" src='+rowCells[9]+'/>';
             listing+='<div class="summaryinfo">';
-            listing+='<div class="infoline"> <p>'+rowCells[7] +'</p></div>';
-            listing+='<div class="infoline"> <p>'+ rowCells[8] +'</p></div>';
+            listing+='<div class="infoline">'+rowCells[7] +'</div>';
+            listing+='<div class="infoline">'+ rowCells[8] +'</div>';
             listing+='<div id="'+rowCells[0]+'" class="sum_review">'+'<p>'+rowCells[1]+'</p></div>';
             listing+='<form action="'+rowCells[10]+'"><input type="submit" value="Check Out the Listing" /></form>';
             listing+= '</div>';
